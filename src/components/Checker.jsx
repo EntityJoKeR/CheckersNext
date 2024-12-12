@@ -5,8 +5,8 @@ import { useState } from "react";
 const Checker = ({color, queen}) => {
     const [checkerColor, setColor] = useState(color)
     const [queenValue, setQueen] = useState(queen)
-    const blackStyles = 'w-[80px] h-[80px] rounded-full bg-black pointer-events-auto flex items-center justify-center'
-    const whiteStyles = 'w-[80px] h-[80px] rounded-full bg-yellow-50 pointer-events-auto flex items-center justify-center'
+    const blackStyles = 'w-[70px] h-[70px] rounded-full bg-black pointer-events-auto flex items-center justify-center'
+    const whiteStyles = 'w-[70px] h-[70px] rounded-full bg-yellow-50 pointer-events-auto flex items-center justify-center'
     let componentStyles = checkerColor==='black'? blackStyles : whiteStyles
 
 
@@ -16,11 +16,11 @@ const Checker = ({color, queen}) => {
         } else{
             setColor('white')
         }
-        // if (queenValue){
-        //     setQueen(false)
-        // } else{
-        //     setQueen(true)
-        // }
+        if (queenValue){
+            setQueen(false)
+        } else{
+            setQueen(true)
+        }
     }
 
     function isQueen(queenValue){
