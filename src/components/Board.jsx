@@ -24,7 +24,7 @@ let boardArr = [
 ]
 
 const Board = () => {
-
+    let backwardChecker = true
     let boardArray = []
     const renderBoard = (board) => {
         let backwardColor = 'black'
@@ -33,10 +33,19 @@ const Board = () => {
             boardArray.push([])
             
             for(let col=0; col<boardArr[row].length; col++){
-                boardArray[row].push(<Area color={backwardColor==='black'?'white':'black'} visibleChecker={true} checkerColor={backwardColor}></Area>)
+                if (backwardChecker) {
+                    boardArray[row].push(<Area color={backwardColor==='black'?'white':'black'} visibleChecker={false} checkerColor={backwardColor}></Area>)
+                    backwardChecker=false
+                }else{
+                    boardArray[row].push(<Area color={backwardColor==='black'?'white':'black'} visibleChecker={true} checkerColor={backwardColor}></Area>)
+                    backwardChecker=true
+                }
+                
                 backwardColor==='black'?backwardColor='white':backwardColor='black'
+                
             }
             backwardColor==='black'?backwardColor='white':backwardColor='black'
+            backwardChecker?backwardChecker=false:backwardChecker=true
         }
     }
     

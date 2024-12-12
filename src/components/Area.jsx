@@ -10,7 +10,7 @@ const Area = ({visibleChecker, color, checkerColor}) => {
     const whiteStyles = 'w-[80px] h-[80px] bg-orange-200 flex items-center justify-center'
     return (
         <div className={color==='black'?blackStyles:whiteStyles}>
-            <Checker color={checkerColor} queen={true}></Checker>
+            <Checker color={checkerColor} queen={true} visible={visibleChecker}></Checker>
         </div>
     );
 };
